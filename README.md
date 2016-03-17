@@ -1,2 +1,7 @@
-# angular2
-example wtih angular2
+# example with angular2
+
+```
+npm install
+typings install
+npm start
+```
