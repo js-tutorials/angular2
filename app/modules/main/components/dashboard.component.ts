@@ -8,27 +8,25 @@ import {Router} from "angular2/router";
 import {OnInit} from "angular2/core";
 
 @Component({
-	selector: 'my-dashboard',
+	selector   : 'my-dashboard',
 	templateUrl: 'app/modules/main/views/dashboard.component.html',
-	styleUrls: ['app/modules/main/css/dashboard.component.css']
+	styleUrls  : ['app/modules/main/css/dashboard.component.css']
 })
 
 export class DashboardComponent implements OnInit {
 
-	heroes: Hero[] = [];
+	heroes:Hero[] = [];
 
-	constructor(
-		private _router: Router,
-		private _heroService: HeroService) {
+	constructor(private _router:Router, private _heroService:HeroService) {
 	}
 
 	ngOnInit() {
 		this._heroService.getHeroes()
-			.then(heroes => this.heroes = heroes.slice(1,5));
+			.then(heroes => this.heroes = heroes.slice(1, 5));
 	}
 
-	gotoDetail(hero: Hero) {
-		let link = ['HeroDetail', { id: hero.id }];
+	gotoDetail(hero:Hero) {
+		let link = ['HeroDetail', {id: hero.id}];
 		this._router.navigate(link);
 	}
 }
